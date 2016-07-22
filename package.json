@@ -1,6 +1,6 @@
 {
   "name": "vue-vimeo-embed",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Vue.js component for Vimeo video player",
   "main": "lib/vue-vimeo-embed.js",
   "scripts": {
