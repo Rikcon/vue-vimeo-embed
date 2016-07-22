@@ -1,0 +1,22 @@
+{
+  "extends": "eslint:recommended",
+  "env": {
+    "browser": true,
+    "es6": true,
+    "mocha": true,
+    "node": true
+  },
+  "globals": {
+    "Vue": true,
+    "VueVimeoEmbed": true,
+    "sinon": true
+  },
+  "parserOptions": {
+    "classes": true,
+    "sourceType": "module"
+  },
+  "rules": {
+    "semi": [2, "never"],
+    "no-console": 0
+  }
+}
