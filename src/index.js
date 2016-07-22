@@ -11,7 +11,7 @@ export const VimeoPlayer = {
             default: 640
         },
         options: {
-            default: {}
+            default: () => []
         },
         videoId: {
             required: true
