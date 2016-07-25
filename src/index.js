@@ -5,13 +5,13 @@ let pid = 0
 export const VimeoPlayer = {
     props: {
         height: {
-            default: 480
+            default: null
         },
         width: {
-            default: 640
+            default: null
         },
         options: {
-            default: () => []
+            default: () => {}
         },
         videoId: {
             required: true
@@ -45,56 +45,60 @@ export const VimeoPlayer = {
         setEvents(){
             const vm = this
 
+            this.player.ready().then(function() {
+                vm.$emit('ready', vm.player)
+            });
+            
             this.player.on('play', function (data) {
-                vm.$emit('play', data)
+                vm.$emit('play', data, vm.player)
             })
 
             this.player.on('pause', function (data) {
-                vm.$emit('pause', data)
+                vm.$emit('pause', data, vm.player)
             })
 
             this.player.on('ended', function (data) {
-                vm.$emit('ended', data)
+                vm.$emit('ended', data, vm.player)
             })
 
             this.player.on('timeupdate', function (data) {
-                vm.$emit('timeupdate', data)
+                vm.$emit('timeupdate', data, vm.player)
             })
 
             this.player.on('progress', function (data) {
-                vm.$emit('progress', data)
+                vm.$emit('progress', data, vm.player)
             })
 
             this.player.on('progress', function (data) {
-                vm.$emit('progress', data)
+                vm.$emit('progress', data, vm.player)
             })
 
             this.player.on('seeked', function (data) {
-                vm.$emit('seeked', data)
+                vm.$emit('seeked', data, vm.player)
             })
 
             this.player.on('texttrackchange', function (data) {
-                vm.$emit('texttrackchange', data)
+                vm.$emit('texttrackchange', data, vm.player)
             })
 
             this.player.on('texttrackchange', function (data) {
-                vm.$emit('texttrackchange', data)
+                vm.$emit('texttrackchange', data, vm.player)
             })
 
             this.player.on('cuechange', function (data) {
-                vm.$emit('cuechange', data)
+                vm.$emit('cuechange', data, vm.player)
             })
 
             this.player.on('volumechange', function (data) {
-                vm.$emit('volumechange', data)
+                vm.$emit('volumechange', data, vm.player)
             })
 
             this.player.on('error', function (data) {
-                vm.$emit('error', data)
+                vm.$emit('error', data, vm.player)
             })
 
             this.player.on('loaded', function (data) {
-                vm.$emit('loaded', data)
+                vm.$emit('loaded', data, vm.player)
             })
 
         }
