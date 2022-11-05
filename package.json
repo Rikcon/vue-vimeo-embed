@@ -42,7 +42,7 @@
     "karma-mocha-reporter": "^1.2.2",
     "karma-sinon": "^1.0.4",
     "karma-webpack": "^1.7.0",
-    "mocha": "^2.4.5",
+    "mocha": "^10.1.0",
     "power-assert": "^1.2.0",
     "sinon": "^1.17.3",
     "vue": "^1.0.24",
